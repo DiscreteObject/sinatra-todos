@@ -18,7 +18,15 @@ get '/' do
 end
 
 post '/' do
-  # params.inspect
   Todo.create(name: params['name'] )
   redirect to('/')
+end
+
+post '/complete/:id/' do
+  p Todo.find(params[:id])
+  done = Todo.find(params[:id])
+  done.completed = true
+  done.save
+  p done
+  redirect to ('/')
 end
