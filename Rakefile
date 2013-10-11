@@ -1,5 +1,5 @@
-require './todo_app'
 require 'sinatra/activerecord/rake'
+require './todo_app'
 
 begin
   require "rspec/core/rake_task"
